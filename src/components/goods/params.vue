@@ -142,7 +142,7 @@
                   size="mini"
                   type="danger"
                   icon="el-icon-delete"
-                  @click="removeParams(scope.row.attr_id)"
+                  @click="removeParams(scope.row.id)"
                   >删除</el-button
                 >
               </template>

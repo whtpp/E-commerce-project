@@ -1,20 +1,23 @@
 html,
 body,
-#app{
-    height:100%;
-    margin: 0;
-    padding: 0;
-    min-width: 1200px;
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 1200px;
 }
 .el-card {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .el-table {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .el-pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.ql-editor {
+  min-height: 300px;
 }

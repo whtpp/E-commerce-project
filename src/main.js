@@ -36,13 +36,26 @@ import {
   Alert,
   Tabs,
   TabPane,
-
+  Step,
+  Steps,
+  RadioGroup,
+  RadioButton,
+  Checkbox,
+  CheckboxGroup,
+  Upload
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import axios from "axios";
 import "./assets/login.css";
 import "./assets/fonts/iconfont.css";
 import TreeTable from "vue-table-with-tree-grid";
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor)
+
 
 Vue.config.productionTip = false;
 Vue.use(Button);
@@ -75,6 +88,15 @@ Vue.use(Cascader);
 Vue.use(Alert);
 Vue.use(TabPane);
 Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Step);
+Vue.use(Steps);
+Vue.use(RadioButton);
+Vue.use(RadioGroup);
+Vue.use(RadioButton);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(Upload);
 
 Vue.prototype.$message = Message;
 Vue.prototype.$confirm = MessageBox.confirm;
@@ -86,6 +108,16 @@ axios.interceptors.request.use(config => {
 });
 Vue.prototype.$http = axios;
 Vue.component("tree-table", TreeTable);
+Vue.filter("dateFormat", function(originVal) {
+  const dt = new Date(originVal);
+  const y = dt.getFullYear();
+  const m = (dt.getMonth() + 1 + "").padStart(2, "0");
+  const d = (dt.getDate() + "").padStart(2, "0");
+  const hh = (dt.getHours() + "").padStart(2, "0");
+  const mm = (dt.getMinutes() + "").padStart(2, "0");
+  const ss = (dt.getSeconds() + "").padStart(2, "0");
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
+});
 
 /* eslint-disable no-new */
 new Vue({
