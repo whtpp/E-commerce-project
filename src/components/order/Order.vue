@@ -104,11 +104,10 @@ export default {
       total: 0,
       orderList: [],
       setDialogVisible: false,
-      addForm:{
-          address1:'',
-          address2:'',
+      addForm: {
+        address1: "",
+        address2: "",
       },
-      citydata,
     };
   },
   created() {
